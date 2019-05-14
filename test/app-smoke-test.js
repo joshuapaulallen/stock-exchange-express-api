@@ -6,14 +6,13 @@ let app = require('../app');
 chai.use(chaiHttp);
 chai.should();
 
-describe('smoke test', function() {
-    describe('index', function() {
-        it('should return 200', function() {
+describe('app smoke test', () => {
+    describe('index', () => {
+        it('should return 200', (done) => {
             chai.request(app)
                 .get('/')
                 .end((err, res) => {
                         res.should.have.status(200);
-                        res.body.should.include('')
                         done();
                     }
                 );
