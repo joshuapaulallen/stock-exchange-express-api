@@ -3,9 +3,15 @@
 /**
  * Module dependencies.
  */
-var app = require('../app');
-var debug = require('debug')('stock-exchange-express-api:server');
-var http = require('http');
+import app from '../app';
+import Debug from 'debug';
+import http from'http';
+
+/**
+ * Debug setup.
+ * @type {debug}
+ */
+const debug = Debug('stock-exchange-express-api:server');
 
 /**
  * Get port from environment and store in Express.
