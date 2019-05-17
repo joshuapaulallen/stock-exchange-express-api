@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "start": "nodemon --exec babel-node bin/www.js",
-    "test": "mocha --require @babel/register ./**/*.js --exit"
+    "test": "mocha --require @babel/register ./test/**/*.js --exit"
   },
   "dependencies": {
     "@babel/preset-env": "^7.4.4",
+    "babel-plugin-module-resolver": "3.2.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
