@@ -19,6 +19,7 @@
     "http-errors": "~1.6.3",
     "iex-api": "0.0.3",
     "morgan": "~1.9.1",
+    "node-uuid": "1.4.8",
     "pug": "2.0.0-beta11",
     "sequelize": "5.8.6",
     "sqlite3": "4.0.8"
