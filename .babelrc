@@ -7,7 +7,9 @@
       "root": ["."],
       "alias": {
         "appRoot" : ".",
-        "routes" : "./routes"
+        "routes" : "./routes",
+        "persistence" : "./src/persistence",
+        "models" : "./src/persistence/model"
       }
     }]
   ]

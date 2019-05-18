@@ -13,7 +13,7 @@ describe.skip('stock exchange api acceptance test', () => {
     describe('create transaction', () => {
         it('should succeed and return an appropriate response', (done) => {
             let path = apiBase + 'transaction';
-            chai.request(app)
+            let result = chai.request(app)
                 .put(path)
                 .send({'symbol' : 'AAPL', 'currencyUnit' : 'USD', 'amount' : Number(100)})
                 .end((err, res) => {
