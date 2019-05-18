@@ -37,14 +37,64 @@ const stockTransactionService = () => {
     };
 
     /**
+     * Find all transactions.
+     *
+     * @returns {Promise<TransactionResult[]>}
+     */
+    let findAll = async () => {
+        let allTransactions = await db.Transaction.findAll();
+
+        return allTransactions.map(toTransactionResult);
+    };
+
+    /**
+     * Find the transaction with the given identifier.
+     *
+     * @param identifier {string} The identifier.
+     * @returns {Promise<TransactionResult>}
+     */
+    let findByIdentifier = async (identifier) => {
+        let findByIdentifierResult = await db.Transaction.findAll({
+            where : {
+                identifier: identifier
+            }
+        });
+
+        return findByIdentifierResult.length > 0 ? toTransactionResult(findByIdentifierResult[0]) : null;
+    };
+
+    /**
+     * Find the transactions with the given stock symbol.
+     *
+     * @param symbol {string} The stock symbol.
+     * @returns {Promise<TransactionResult[]>}
+     */
+    let findBySymbol = async (symbol) => {
+        let transactionsBySymbolResult = await db.Transaction.findAll({
+            where : {
+                stockSymbol: symbol
+            }
+        });
+
+        return transactionsBySymbolResult.map(toTransactionResult);
+    };
+
+    /**
      * Generate a new unique identifier for a transaction.
      */
     let generateTransactionIdentifier = () => {
         return uuidv4();
     };
 
+    let toTransactionResult = (transactionEntity) => {
+        return new TransactionResult(transactionEntity.identifier, transactionEntity.stockSymbol, 'USD', transactionEntity.stockAmount, transactionEntity.shares);
+    };
+
     return {
-        buy : buy
+        buy : buy,
+        findAll : findAll,
+        findByIdentifier : findByIdentifier,
+        findBySymbol : findBySymbol
     };
 };
 
