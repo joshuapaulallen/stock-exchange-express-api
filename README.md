@@ -8,8 +8,8 @@ I worked on the [stock-exchange-api](https://github.com/joshuapaulallen/stock-ex
 Notable Things Learned
 ----------------------
 
-- Relative paths suck when importing modules.  This plugin was useful to define directory aliases that can be used when importing stuff: [babel-plugin-module-resolver](https://github.com/tleunen/babel-plugin-module-resolver). See the `module-resolver` plugin in [.babelrc](./.babelrc).
-- This was my first experience with [sequelize](http://docs.sequelizejs.com)]. I'm pretty particular with how I organize my projects, so I liked how I can customize paths for Important Sequelize Things.  See: [.sequelizerc](./.sequelizerc).
+- Relative paths suck when importing modules.  This plugin was useful to define directory aliases that can be used when importing stuff: [babel-plugin-module-resolver](https://github.com/tleunen/babel-plugin-module-resolver). See the `module-resolver` plugin in [.babelrc](./.babelrc) for configuration details.
+- This was my first experience with [sequelize](http://docs.sequelizejs.com). I'm particular with how I organize my projects, so I liked how I can customize paths for Important Sequelize Things.  See: [.sequelizerc](./.sequelizerc).
 
 How Do I Run It?
 ================
@@ -27,7 +27,7 @@ Running It
 3. Navigate to the stock-exchange-api root directory.
 4. `npm install`
 5. `npm test` to run the test suite.
-6. `npm start` to run the server.
+6. `npm start` to run the server, which runs on port 3000 by default.
 
 You can use this Postman collection to interact with the API: [stock-exchange-express-api.postman_collection.json](docs/stock-exchange-express-api.postman_collection.json)
 
