@@ -3,10 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon --exec babel-node bin/www.js",
-    "test": "NODE_ENV=test mocha --require @babel/register ./test/**/*.js --exit",
     "db:migrate": "sequelize db:migrate --config ./src/persistence/config/config.json",
-    "pretest": "NODE_ENV=test npm run db:migrate"
+    "pretest": "NODE_ENV=test npm run db:migrate",
+    "test": "NODE_ENV=test mocha --require @babel/register ./test/**/*.js --exit",
+    "prestart": "npm run db:migrate",
+    "start": "nodemon --exec babel-node bin/www.js"
   },
   "dependencies": {
     "@babel/polyfill": "7.4.4",

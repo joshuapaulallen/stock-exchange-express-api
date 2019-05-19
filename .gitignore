@@ -6,3 +6,6 @@ node_modules/
 
 # in-memory database
 data/
+
+# npm
+npm-debug.log
