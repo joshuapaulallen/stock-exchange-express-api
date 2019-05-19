@@ -34,7 +34,10 @@ describe('stock transaction service', () => {
         });
     });
 
-    describe('finders', () => {
+    describe('finders', function () {
+
+        // since setting up these preconditions takes a bit, bump the timeout up from the default of 2000 ms
+        this.timeout(10000);
 
         let identifiers = [];
         let purchasesPerStock = 3;
